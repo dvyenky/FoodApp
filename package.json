@@ -1,0 +1,19 @@
+{
+  "name": "fastfood",
+  "version": "1.0.0",
+  "description": "These is a React Based Application",
+  "main": "App.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [
+    "React",
+    "JavaScript",
+    "node"
+  ],
+  "author": "vyenkatesh",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel": "^2.16.1"
+  }
+}
