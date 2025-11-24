@@ -1,19 +1,38 @@
 {
   "name": "fastfood",
   "version": "1.0.0",
-  "description": "These is a React Based Application",
-  "main": "App.js",
+  "description": "These is a React Food Application",
   "scripts": {
+    "dev": "parcel index.html",
+    "build": "parcel build index.html",
     "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dvyenky/FoodApp.git"
   },
   "keywords": [
     "React",
     "JavaScript",
-    "node"
+    "Food"
   ],
-  "author": "vyenkatesh",
+  "author": "Vyenkatesh",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dvyenky/FoodApp/issues"
+  },
+  "homepage": "https://github.com/dvyenky/FoodApp#readme",
   "devDependencies": {
-    "parcel": "^2.16.1"
-  }
+    "@tailwindcss/postcss": "^4.1.17",
+    "parcel": "^2.16.1",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^4.1.17"
+  },
+  "dependencies": {
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0"
+  },
+  "browserslist": [
+    "last 2 versions"
+  ]
 }
