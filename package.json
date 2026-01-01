@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "These is a React Food Application",
   "scripts": {
-    "dev": "parcel index.html",
+    "start": "parcel index.html",
     "build": "parcel build index.html",
     "test": "jest"
   },
