@@ -1,14 +1,12 @@
 import Header from "./components/Header";
-import RestaurantContainer from "./components/RestaurantContainer";
-import Search from "./components/Search";
+import { Outlet } from "react-router";
 
 export default function App() {
   return (
     <>
       <div className="main">
         <Header />
-        <Search />
-        <RestaurantContainer />
+        <Outlet />
       </div>
     </>
   );

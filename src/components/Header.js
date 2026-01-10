@@ -1,23 +1,42 @@
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import { LOGO_URL } from "../utils/constant";
 import "../index.css";
+
 const Header = () => {
+  const [loginBtn, setLoginBtn] = useState("Login");
   return (
     <>
       <div className="header">
         <div>
-          <img
-            src="https://marketplace.canva.com/EAGXsRURT9o/1/0/1600w/canva-yellow-and-brown-kitchen-food-logo-JrzZUwc_CLQ.jpg"
-            width={"100px"}
-          />
+          <img src={LOGO_URL} width={"100px"} />
         </div>
         <div className="navigation-items">
-          <span>Home</span>
-          <span>About</span>
-          <span>Cart</span>
-          <span>Help</span>
+          <Link to={"/"} className="link-button">
+            <span>Home</span>
+          </Link>
+          <Link to={"/about"} className="link-button">
+            <span>About</span>
+          </Link>
+          <Link to={"contact"} className="link-button">
+            <span>Contact Us</span>
+          </Link>
+          <Link className="link-button">
+            <span>Help</span>{" "}
+          </Link>
         </div>
         <div>
           {" "}
-          <button className="login-button">Login</button>{" "}
+          <button
+            className="login-button"
+            onClick={() => {
+              loginBtn === "Login"
+                ? setLoginBtn("Logout")
+                : setLoginBtn("Login");
+            }}
+          >
+            {loginBtn}
+          </button>{" "}
         </div>
       </div>
     </>
