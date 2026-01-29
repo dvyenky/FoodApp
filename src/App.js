@@ -1,13 +1,18 @@
-import Header from "./components/Header";
+import { useContext } from "react";
 import { Outlet } from "react-router";
+import Header from "./components/Header";
+import UserContext from "./utils/UserContext";
 
 export default function App() {
+  const { loggedIn } = useContext(UserContext);
   return (
     <>
-      <div className="main">
-        <Header />
-        <Outlet />
-      </div>
+      <UserContext.Provider value={{ loggedIn }}>
+        <div className="mx-[50px]">
+          <Header />
+          <Outlet />
+        </div>
+      </UserContext.Provider>
     </>
   );
 }

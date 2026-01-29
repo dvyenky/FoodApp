@@ -1,12 +1,16 @@
+import React, { lazy, Suspense } from "react";
 import { createRoot } from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import About from "./components/About";
-import Contact from "./components/Contact";
 import App from "./App";
-import "./index.css"; // tailwind import
+import Contact from "./components/Contact";
 import Error from "./components/Error";
 import RestaurantContainer from "./components/RestaurantContainer";
 import RestaurantMenu from "./components/RestaurantMenu";
+import "./index.css"; // tailwind import
+
+
+const About = lazy(() => import("./components/About"));
+const Grocery = lazy(() => import("./components/Grocery"));
 
 const root = createRoot(document.getElementById("root"));
 const app = createBrowserRouter([
@@ -20,11 +24,23 @@ const app = createBrowserRouter([
       },
       {
         path: "/about",
-        element: <About />,
+        element: (
+          <Suspense fallback={<h1>Loading.....</h1>}>
+            <About />
+          </Suspense>
+        ),
       },
       {
         path: "/contact",
         element: <Contact />,
+      },
+      {
+        path: "/grocery",
+        element: (
+          <Suspense fallback={<h1>Loading.....</h1>}>
+            <Grocery />
+          </Suspense>
+        ),
       },
       {
         path: "/restaurant/:resId",
@@ -35,4 +51,8 @@ const app = createBrowserRouter([
   },
 ]);
 
-root.render(<RouterProvider router={app} />);
+root.render(
+  <React.StrictMode>
+    <RouterProvider router={app} />
+  </React.StrictMode>,
+);
